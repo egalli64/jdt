@@ -1,8 +1,8 @@
-package com.example.jdt;
+package com.example.jdt.h2;
 
-import static com.example.jdt.Config.PASSWORD;
-import static com.example.jdt.Config.URL;
-import static com.example.jdt.Config.USER;
+import static com.example.jdt.h2.Config.PASSWORD;
+import static com.example.jdt.h2.Config.URL;
+import static com.example.jdt.h2.Config.USER;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 

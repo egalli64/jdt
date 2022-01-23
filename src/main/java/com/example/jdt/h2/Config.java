@@ -1,4 +1,4 @@
-package com.example.jdt;
+package com.example.jdt.h2;
 
 public final class Config {
     public static final String URL = "jdbc:h2:./jdt";
