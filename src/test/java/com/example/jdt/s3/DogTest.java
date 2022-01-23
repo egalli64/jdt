@@ -1,4 +1,4 @@
-package com.example.jht.s3;
+package com.example.jdt.s3;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -10,8 +10,6 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 
 import org.junit.jupiter.api.Test;
-
-import com.example.jdt.s3.Dog;
 
 class DogTest {
     @Test

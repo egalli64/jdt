@@ -1,4 +1,4 @@
-package com.example.jht.s3;
+package com.example.jdt.s3;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -12,8 +12,6 @@ import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 
 import org.junit.jupiter.api.Test;
-
-import com.example.jdt.s3.SerialDog;
 
 class SerialDogTest {
     @Test

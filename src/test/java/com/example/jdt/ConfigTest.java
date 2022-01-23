@@ -1,4 +1,4 @@
-package com.example.jht;
+package com.example.jdt;
 
 import static com.example.jdt.Config.PASSWORD;
 import static com.example.jdt.Config.URL;
