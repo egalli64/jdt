@@ -15,12 +15,15 @@ public class Setup {
             create table owner (
             owner_id identity primary key,
             first_name varchar(20),
-            last_name varchar(20))""";
+            last_name varchar(20),
+            unique(first_name, last_name))""";
     static final String CREATE_DOG_TABLE = """
             create table dog (
             dog_id identity primary key,
             name varchar(20),
+            birth date,
             owner_id integer,
+            unique(name, birth),
             constraint dog_owner_fk foreign key (owner_id) references owner (owner_id))""";
 
     public static void main(String[] args) {

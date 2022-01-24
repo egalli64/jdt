@@ -5,20 +5,22 @@ import java.util.Set;
 
 public class MainDb {
     public static void main(String[] args) {
-        create();
+        int pid = create();
+        System.out.println("Person has id " + pid);
 
-        DogOwner tom = read();
+        DogOwner tom = read(pid);
         System.out.println("Tom: " + tom);
     }
 
-    private static DogOwner read() {
-        return null;
+    private static DogOwner read(int pid) {
+        return DogAssemblerDb.read(pid);
     }
 
-    private static void create() {
+    private static int create() {
         Set<Dog> dogs = Set.of(new Dog("Bob", LocalDate.now()), new Dog("Bix", LocalDate.of(2020, 10, 20)));
-        DogOwner tom = new DogOwner("Tom", "Smith", dogs);
+        Person tom = new Person("Tom", "Smith");
+        System.out.println("Saving " + tom);
 
-        System.out.println(tom);
+        return DogAssemblerDb.save(tom, dogs);
     }
 }
