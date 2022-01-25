@@ -10,6 +10,11 @@ public class DogOwner extends Person {
     private Set<Dog> dogs;
 
     public DogOwner() {
+        this(0);
+    }
+
+    public DogOwner(int key) {
+        this.key = key;
     }
 
     public DogOwner(int key, String firstName, String lastName, Set<Dog> dogs) {
