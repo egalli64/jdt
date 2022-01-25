@@ -9,10 +9,10 @@ import java.io.ObjectOutputStream;
 import java.util.Set;
 
 public class DogAssemblerFile {
-    private static final String FILE_EXT = ".dogs";
+    private static final String BASE_FILE_NAME = "dogs.";
 
-    public static DogOwner read(String key) {
-        File dump = new File(key + FILE_EXT);
+    public static DogOwner read(int key) {
+        File dump = new File(BASE_FILE_NAME + key);
         try (FileInputStream fis = new FileInputStream(dump); //
                 ObjectInputStream ois = new ObjectInputStream(fis)) {
             Object obj = ois.readObject();
@@ -26,10 +26,10 @@ public class DogAssemblerFile {
         }
     }
 
-    public static void save(String key, Person person, Set<Dog> dogs) {
-        DogOwner owner = new DogOwner(person.getFirstName(), person.getLastName(), dogs);
+    public static void save(int key, Person person, Set<Dog> dogs) {
+        DogOwner owner = new DogOwner(key, person.getFirstName(), person.getLastName(), dogs);
 
-        File dump = new File(key + FILE_EXT);
+        File dump = new File(BASE_FILE_NAME + key);
         try (FileOutputStream fos = new FileOutputStream(dump); //
                 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(owner);

@@ -6,14 +6,24 @@ import java.util.Set;
 public class DogOwner extends Person {
     @Serial
     private static final long serialVersionUID = 4107673229461141934L;
+    private int key;
     private Set<Dog> dogs;
 
     public DogOwner() {
     }
 
-    public DogOwner(String firstName, String lastName, Set<Dog> dogs) {
+    public DogOwner(int key, String firstName, String lastName, Set<Dog> dogs) {
         super(firstName, lastName);
+        this.key = key;
         this.dogs = dogs;
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
     }
 
     public Set<Dog> getDogs() {
@@ -26,6 +36,6 @@ public class DogOwner extends Person {
 
     @Override
     public String toString() {
-        return "DogOwner [dogs=" + dogs + ", " + super.toString() + "]";
+        return "DogOwner [key=" + key + ", " + super.toString() + ", dogs=" + dogs + "]";
     }
 }

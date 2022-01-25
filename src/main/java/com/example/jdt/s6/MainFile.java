@@ -7,7 +7,7 @@ public class MainFile {
     public static void main(String[] args) {
         serializeDogs();
 
-        DogOwner tom = DogAssemblerFile.read("tom");
+        DogOwner tom = DogAssemblerFile.read(42);
         System.out.println("Deserialized tom: " + tom);
     }
 
@@ -15,7 +15,7 @@ public class MainFile {
         Set<Dog> dogs = Set.of(new Dog("Bob", LocalDate.now()), new Dog("Bix", LocalDate.of(2020, 10, 20)));
         Person tom = new Person("Tom", "Smith");
 
-        DogAssemblerFile.save("tom", tom, dogs);
+        DogAssemblerFile.save(42, tom, dogs);
         System.out.println("Serializing done");
     }
 }
