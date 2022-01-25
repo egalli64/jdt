@@ -43,4 +43,32 @@ public class DogOwner extends Person {
     public String toString() {
         return "DogOwner [key=" + key + ", " + super.toString() + ", dogs=" + dogs + "]";
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((dogs == null) ? 0 : dogs.hashCode());
+        result = prime * result + key;
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        DogOwner other = (DogOwner) obj;
+        if (dogs == null) {
+            if (other.dogs != null)
+                return false;
+        } else if (!dogs.equals(other.dogs))
+            return false;
+        if (key != other.key)
+            return false;
+        return true;
+    }
 }
