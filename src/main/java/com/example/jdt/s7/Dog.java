@@ -1,9 +1,9 @@
 package com.example.jdt.s7;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public record Dog(String name, LocalDate birth) {
-
+public record Dog(String name, LocalDate birth) implements Serializable {
     public Dog() {
         this("Unknown", LocalDate.now());
     }
