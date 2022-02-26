@@ -21,10 +21,13 @@ public record Dog(String name, LocalDate birth) implements Serializable {
         System.out.println("Dog birth: " + dog.birth());
         System.out.println("Dog: " + dog);
 
-        System.out.println("Null data members disallowed for Dog");
-//        Dog x = new Dog(null, null);
-//        System.out.println("Dog name: " + x.name());
-//        System.out.println("Dog birth: " + x.birth());
-//        System.out.println("Dog: " + dog);
+        try {
+            Dog x = new Dog(null, null);
+            System.out.println("Dog name: " + x.name());
+            System.out.println("Dog birth: " + x.birth());
+            System.out.println("Dog: " + dog);
+        } catch (IllegalArgumentException iae) {
+            System.out.println("Check on Dog data members, " + iae);
+        }
     }
 }
